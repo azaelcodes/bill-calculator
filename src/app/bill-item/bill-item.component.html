@@ -1,0 +1,40 @@
+<mat-toolbar>
+  Bill App
+</mat-toolbar>
+
+
+<mat-card>
+
+  <mat-form-field>
+
+    <input matInput placeholder="Amount" type="number" />
+
+  </mat-form-field>
+
+  <mat-form-field>
+
+    <input type="text" matInput placeholder="Item Name" />
+
+  </mat-form-field>
+
+  <mat-form-field>
+
+    <input type="text" matInput placeholder="Total" />
+
+  </mat-form-field>
+
+  <p>
+    <button mat-raised-button color="primary" (click)="addItem()">Add</button>
+  </p>
+
+  <div *ngIf="item">
+
+    <h1>{{ item.name }}</h1>
+
+  </div>
+
+</mat-card>
+
+
+
+
