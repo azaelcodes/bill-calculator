@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Item} from '../model/item';
 
 @Component({
   selector: 'app-bill',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BillComponent implements OnInit {
 
+  list: Array<Item> = [];
   constructor() { }
 
   ngOnInit() {

@@ -5,9 +5,10 @@
 
 <mat-card>
 
+
   <mat-form-field>
 
-    <input matInput placeholder="Amount" type="number" />
+    <input [value]="textValue" matInput placeholder="Amount" type="number" />
 
   </mat-form-field>
 
@@ -24,12 +25,16 @@
   </mat-form-field>
 
   <p>
-    <button mat-raised-button color="primary" (click)="addItem()">Add</button>
+    <button mat-raised-button color="primary" (click)="addItem(textValue)">Add</button>
   </p>
 
-  <div *ngIf="item">
+  <div *ngIf="list">
 
-    <h1>{{ item.name }}</h1>
+    <ul>
+      <li *ngFor="let item of list">
+          {{ item.name }}
+      </li>
+    </ul>
 
   </div>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {Item} from '../model/item';
 
 @Component({
@@ -8,15 +8,24 @@ import {Item} from '../model/item';
 })
 export class BillItemComponent implements OnInit {
 
-  item: Item;
+  list: Array<Item> = [];
+
+  @Output() messageEvent = new EventEmitter<Item>();
 
   constructor() {}
 
-  addItem(): void {
+  addItem(input: any) {
 
-    this.item = new Item(1, 'cereal', 5.6);
+    console.log(input);
+
+    const itemObj = new Item();
+    itemObj.quantity = 1;
+    itemObj.name = 'Food Stuff';
+    itemObj.totalPrice = 123;
+    this.list.push(itemObj);
 
   }
+
 
   ngOnInit() {
   }
